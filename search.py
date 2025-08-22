@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
 import os
-from bs4 import BeautifulSoup
+import sys
+from typing import List, Dict, Tuple, Any
+from bs4 import BeautifulSoup, Tag
 from whoosh import index
 from whoosh.fields import Schema, TEXT, ID
 from whoosh.qparser import QueryParser
-import sys
 
-def parse_faq_html(html_file):
+def parse_faq_html(html_file: str) -> List[Dict[str, Any]]:
     """Parse the HTML file and extract FAQ entries."""
     with open(html_file, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -17,6 +18,8 @@ def parse_faq_html(html_file):
     
     entries = []
     for item in faq_items:
+        if not isinstance(item, Tag):
+            continue
         category_elem = item.find('div', class_='category')
         question_elem = item.find('div', class_='faq-question')
         answer_elem = item.find('div', class_='faq-answer')
@@ -36,7 +39,7 @@ def parse_faq_html(html_file):
     
     return entries
 
-def create_search_index(entries, index_dir):
+def create_search_index(entries: List[Dict[str, Any]], index_dir: str) -> Any:
     """Create a Whoosh search index from FAQ entries."""
     schema = Schema(
         id=ID(stored=True),
@@ -64,7 +67,7 @@ def create_search_index(entries, index_dir):
     
     return ix
 
-def search_faq(index_dir, query_string, limit=3):
+def search_faq(index_dir: str, query_string: str, limit: int = 3) -> List[Tuple[str, str, str]]:
     """Search the FAQ index and return results."""
     ix = index.open_dir(index_dir)
     
@@ -75,7 +78,7 @@ def search_faq(index_dir, query_string, limit=3):
         
         return [(hit['question'], hit['answer'], hit['category']) for hit in results]
 
-def main():
+def main() -> None:
     html_file = 'faq.html'
     index_dir = 'indexdir'
     
