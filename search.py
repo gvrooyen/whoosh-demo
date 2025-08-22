@@ -10,6 +10,7 @@ from whoosh.qparser import QueryParser
 
 def parse_faq_html(html_file: str) -> List[Dict[str, Any]]:
     """Parse the HTML file and extract FAQ entries."""
+
     with open(html_file, 'r', encoding='utf-8') as f:
         content = f.read()
     
@@ -41,6 +42,7 @@ def parse_faq_html(html_file: str) -> List[Dict[str, Any]]:
 
 def create_search_index(entries: List[Dict[str, Any]], index_dir: str) -> Any:
     """Create a Whoosh search index from FAQ entries."""
+
     schema = Schema(
         id=ID(stored=True),
         category=TEXT(stored=True),
@@ -69,6 +71,7 @@ def create_search_index(entries: List[Dict[str, Any]], index_dir: str) -> Any:
 
 def search_faq(index_dir: str, query_string: str, limit: int = 3) -> List[Tuple[str, str, str]]:
     """Search the FAQ index and return results."""
+
     ix = index.open_dir(index_dir)
     
     with ix.searcher() as searcher:
