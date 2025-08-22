@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Quirky Contraptions Co.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            transition: border-color 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            background: #f8f9fa;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 200px;
+        }
+
+        .category {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+        }
+
+        .ostrich { background: #ff6b6b; }
+        .elephant { background: #4ecdc4; }
+        .tomato { background: #ffd93d; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦓 Quirky Contraptions Co.</h1>
+            <p>Your premier destination for ostrich waxers, elephant deterrents & tomato peelers</p>
+        </div>
+        
+        <div class="content">
+            <input type="text" class="search-box" placeholder="Search FAQ..." id="searchBox">
+            
+            <div class="faq-list" id="faqList">
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">What is an ostrich waxer and why do I need one?</div>
+                    <div class="faq-answer">An ostrich waxer is a specialized tool designed to maintain the lustrous sheen of ostrich feathers. Essential for ostrich enthusiasts and professional ostrich groomers.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">How often should I wax my ostrich?</div>
+                    <div class="faq-answer">For optimal results, we recommend waxing your ostrich every 2-3 weeks, or whenever their feathers lose their natural sparkle.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">Do your elephant deterrents work on baby elephants too?</div>
+                    <div class="faq-answer">Yes! Our deterrents are calibrated for elephants of all ages, from playful calves to wise matriarchs. Size settings are adjustable.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">Can your tomato peelers handle cherry tomatoes?</div>
+                    <div class="faq-answer">Absolutely! Our precision micro-peelers are specifically designed for cherry tomatoes, grape tomatoes, and even the tiniest cherry varieties.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">Is ostrich wax safe for the environment?</div>
+                    <div class="faq-answer">Our eco-friendly wax formula is 100% biodegradable and sourced from sustainable bee colonies. No ostriches were harmed in the making.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">How far away will elephants stay after using your deterrent?</div>
+                    <div class="faq-answer">Our standard model maintains a 50-foot elephant-free zone. The deluxe model extends this to 100 feet for extra peace of mind.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">Do you offer left-handed tomato peelers?</div>
+                    <div class="faq-answer">Yes! We understand the struggles of left-handed tomato enthusiasts. Our ergonomic left-handed models are equally efficient and comfortable.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">Can I use the ostrich waxer on other large birds?</div>
+                    <div class="faq-answer">While designed for ostriches, our waxers work wonderfully on emus, rheas, and cassowaries. Not recommended for flamingos due to their delicate constitution.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">Will the deterrent affect my pet elephant?</div>
+                    <div class="faq-answer">Great question! Our deterrents include a "friendly elephant" mode that recognizes domesticated elephants and only deters wild ones.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">What's the difference between Model A and Model B peelers?</div>
+                    <div class="faq-answer">Model A handles standard tomatoes up to 4 inches. Model B is our heavy-duty version for beefsteak tomatoes and other giants up to 8 inches.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">How long does a bottle of ostrich wax last?</div>
+                    <div class="faq-answer">One bottle typically lasts 3-4 months for a single ostrich, or 6-8 weeks if you have a particularly fabulous ostrich that requires frequent touch-ups.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">Is your deterrent effective against mammoth invasions?</div>
+                    <div class="faq-answer">While we haven't encountered any mammoths lately, our technology is based on general pachyderm psychology, so it should work in theory!</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">Can I peel other vegetables with the tomato peeler?</div>
+                    <div class="faq-answer">Our peelers excel at soft-skinned vegetables like peaches and plums, but we strongly advise against using them on potatoes or carrots.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">Do you provide ostrich waxing tutorials?</div>
+                    <div class="faq-answer">Yes! Every purchase includes access to our comprehensive video series "Waxing Like a Pro" featuring renowned ostrich stylist Madame Featherworth.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">What happens if an elephant ignores the deterrent?</div>
+                    <div class="faq-answer">In rare cases of particularly stubborn elephants, activate the "emergency override" mode which plays recordings of mice squeaking at ultrasonic frequencies.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">How sharp are the tomato peeler blades?</div>
+                    <div class="faq-answer">Sharp enough to effortlessly remove tomato skin, but designed with safety in mind. They're about as sharp as a good quality kitchen knife.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">Can I subscribe for regular wax deliveries?</div>
+                    <div class="faq-answer">Absolutely! Our "Perpetual Shine" subscription delivers fresh wax every 6 weeks. Cancel anytime, no questions asked (well, maybe one or two).</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">Does the deterrent work indoors?</div>
+                    <div class="faq-answer">Yes, though we question why elephants would be indoors in the first place. The indoor mode reduces power by 60% to avoid disturbing neighbors.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">Is there a warranty on tomato peelers?</div>
+                    <div class="faq-answer">All peelers come with a 2-year warranty against defects and a lifetime guarantee against tomato-related disappointment.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">What if my ostrich doesn't like being waxed?</div>
+                    <div class="faq-answer">Start with gentle movements and plenty of encouragement. Most ostriches develop a taste for the luxury once they see the results. Bribery with premium feed also helps.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">Can I use the deterrent to train my elephant to dance?</div>
+                    <div class="faq-answer">While not its intended purpose, several customers have reported success in creating "elephant-free dance zones" which elephants then avoid during performances.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">How many tomatoes can I peel per minute?</div>
+                    <div class="faq-answer">With practice, our customers average 12-15 tomatoes per minute. The current world record holder peeled 23 tomatoes in 60 seconds!</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">Do you sell replacement brushes for the waxer?</div>
+                    <div class="faq-answer">Yes! Replacement brushes are available in soft, medium, and "extra fabulous" bristle strengths. We recommend changing brushes every 50 waxings.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">Is the deterrent effective against circus elephants?</div>
+                    <div class="faq-answer">Circus elephants are trained professionals and may require our "Pro Deterrent" model with enhanced psychological countermeasures.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">Can children use the tomato peelers safely?</div>
+                    <div class="faq-answer">Our Junior Peeler model is designed for ages 8+ with rounded edges and automatic safety locks. Adult supervision still recommended for optimal results.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">What temperature should the wax be?</div>
+                    <div class="faq-answer">Room temperature (68-72°F) is perfect. Cold wax won't spread properly, and hot wax might make your ostrich uncomfortable and potentially grumpy.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">How long does the battery last?</div>
+                    <div class="faq-answer">Standard batteries last 6 months with normal use. Heavy elephant traffic areas may require more frequent battery changes (every 3-4 months).</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">Do you offer bulk discounts for restaurants?</div>
+                    <div class="faq-answer">Yes! Orders of 10+ peelers receive 15% off. Orders of 50+ receive 25% off plus a complimentary tomato peeling masterclass.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category ostrich">Ostrich Waxers</div>
+                    <div class="faq-question">Can I wax multiple ostriches with one device?</div>
+                    <div class="faq-answer">Absolutely! Just remember to clean the brushes between birds. Cross-contamination can lead to feather feuds among your flock.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category elephant">Elephant Deterrents</div>
+                    <div class="faq-question">What's the range of the deterrent signal?</div>
+                    <div class="faq-answer">Our standard model covers a 200-foot radius. The deluxe model extends to 500 feet, perfect for protecting entire properties or small villages.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="category tomato">Tomato Peelers</div>
+                    <div class="faq-question">Do you have international shipping?</div>
+                    <div class="faq-answer">We ship worldwide! However, some countries have strict tomato peeler import regulations. Check with your local customs before ordering.</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = this.classList.contains('active');
+                    
+                    // Close all other items
+                    questions.forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        this.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+
+            // Search functionality
+            const searchBox = document.getElementById('searchBox');
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            searchBox.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
