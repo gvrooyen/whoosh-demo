@@ -1,10 +1,10 @@
-# FAQ Search Demo
+# Whoosh Search Demo
 
-A demonstration project for searching FAQ entries using Python and Whoosh.
+A demonstration project for searching static HTML pages such as FAQ entries using Python and Whoosh.
 
 ## Overview
 
-This project contains a FAQ page for "Quirky Contraptions Co." - a fictional company selling ostrich waxers, elephant deterrents, and tomato peelers. The FAQ is indexed using the Whoosh search library to enable fast text search.
+This project contains a FAQ page for a fictional company. The FAQ is indexed using the Whoosh search library to enable fast text search.
 
 ## Files
 
@@ -41,10 +41,3 @@ Type 'quit', 'exit', or 'q' to exit the search interface.
 
 - `whoosh` - Full-text search library
 - `beautifulsoup4` - HTML parsing library
-
-## FAQ Categories
-
-The FAQ is organized into three categories:
-- **Ostrich Waxers** - Tools for maintaining ostrich feather shine
-- **Elephant Deterrents** - Devices for keeping elephants away
-- **Tomato Peelers** - Precision tools for tomato preparation
